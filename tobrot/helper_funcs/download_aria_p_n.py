@@ -113,7 +113,7 @@ def add_magnet(aria_instance, magnetic_link, c_file_name):
     except Exception as e:
         return (
             False,
-            "**FAILED** \n" + str(e) + " \n<b> Your link is Dead 🐈</b>",
+            "**FAILED** \n" + str(e) + " \n<b> Your link is Dead</b>",
         )
     else:
         return True, "" + download.gid + ""
@@ -138,12 +138,12 @@ def add_torrent(aria_instance, torrent_file_path):
                 False,
                 "**FAILED** \n"
                 + str(e)
-                + " \n<b> Your Link is Dead 🐈</b>",
+                + " \n<b> Your Link is Dead</b>",
             )
         else:
             return True, "" + download.gid + ""
     else:
-        return False, "**FAILED** \nPlease try other sources to get workable link"
+        return False, "**FAILED** \nPlease try get a working link"
 
 
 def add_url(aria_instance, text_url, c_file_name):
@@ -174,7 +174,7 @@ def add_url(aria_instance, text_url, c_file_name):
     except Exception as e:
         return (
             False,
-            "**FAILED** \n" + str(e) + " \nPlease do not send SLOW links. Read /help",
+            "**FAILED** \n" + str(e) + " \nPlease do not send SLOW links.",
         )
     else:
         return True, "" + download.gid + ""
@@ -288,7 +288,6 @@ async def call_apropriate_function(
                         f"<b><a href='tg://user?id={user_id}'>📁 Your Requested Files</a></b>\n\n"
                     )
                     message_to_send = mention_req_user + message_to_send
-                    message_to_send = message_to_send + "\n\n" + "#uploaded\n\n<b>💫 Powered By : @TGFilmZone</b>"
                 else:
                     message_to_send = "<i>FAILED</i> to upload files. 😞😞"
                 await user_message.reply_text(
