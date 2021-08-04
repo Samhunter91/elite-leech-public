@@ -11,14 +11,7 @@ async def new_join_f(client, message):
     if chat_type != "private":
         await message.reply_text(
             f"""<b>🙋🏻‍♂️ Hello friend!\n\n Welcome to the group</b>\n\n<b>Current CHAT ID: <code>{message.chat.id}</code>""",
-            parse_mode="html",
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton('Index Link', url='snowy-mountain.hikari-drive.workers.dev/')
-                    ]
-                ]
-               )
+            parse_mode="html"
             )
         # leave chat
         await client.leave_chat(chat_id=message.chat.id, delete=True)
